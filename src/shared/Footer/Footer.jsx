@@ -9,7 +9,7 @@ const Footer = () => {
                     <div className="flex justify-center text-teal-600">
                         <div className='flex items-center justify-center'>
                             <img className="w-[60px]" src="https://i.ibb.co/dDmDt9z/360-F-479498833-ZB8t-Dfb-Ve5-VCuzq-PPJAUu0-PP391v-NCSq.png" alt="" />
-                            <h1 className='text-black font-bold text-sm uppercase'>Technovision Inc.</h1>
+                            <h1 className='text-black font-bold text-sm uppercase'>Technovision </h1>
                         </div>
                     </div>
 
