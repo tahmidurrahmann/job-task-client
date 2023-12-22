@@ -56,12 +56,13 @@ const PreviousTask = () => {
                                 <h3 className="font-medium">Deadline: {task?.deadline}</h3>
                                 <p>{task?.priority}</p>
                                 <p>{task?.description.length > 20 ? task?.description.slice(0, 20) : task?.description}...</p>
+                                <p>Task Added By : <span className="font-semibold">{task?.email}</span></p>
                             </div>
                             <div className="flex flex-col justify-between items-center gap-4">
                                 <button onClick={() => handleDelete(task?._id)} className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdOutlineDeleteOutline size={16} /></button>
                                 <Link to={`/dashboard/update/${task?._id}`}><button className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdEdit size={16} /></button></Link>
                                 <Link to={`/dashboard/move/${task?._id}`}>
-                                    <button className="py-1 px-2 rounded flex flex-row gap-2 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs md:text-base"><BiTransferAlt />Move Task To</button>
+                                    <button className="py-1 px-2 rounded flex flex-row gap-1 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs"><BiTransferAlt />Move Task To</button>
                                 </Link>
                             </div>
                         </div>)
@@ -76,12 +77,13 @@ const PreviousTask = () => {
                                 <h3 className="font-medium">Deadline: {task?.deadline}</h3>
                                 <p>{task?.priority}</p>
                                 <p>{task?.description.length > 20 ? task?.description.slice(0, 20) : task?.description}...</p>
+                                <p>Task Added By : <span className="font-semibold">{task?.email}</span></p>
                             </div>
                             <div className="flex flex-col justify-between items-center gap-6">
                                 <button onClick={() => handleDelete(task?._id)} className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdOutlineDeleteOutline size={16} /></button>
                                 <Link to={`/dashboard/update/${task?._id}`}><button className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdEdit size={16} /></button></Link>
                                 <Link to={`/dashboard/move/${task?._id}`}>
-                                    <button className="py-1 px-2 rounded flex flex-row gap-2 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs md:text-base"><BiTransferAlt />Move Task To</button>
+                                    <button className="py-1 px-2 rounded flex flex-row gap-1 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs"><BiTransferAlt />Move Task To</button>
                                 </Link>
                             </div>
                         </div>)
@@ -96,12 +98,13 @@ const PreviousTask = () => {
                                 <h3 className="font-medium">Deadline: {task?.deadline}</h3>
                                 <p>{task?.priority}</p>
                                 <p>{task?.description.length > 20 ? task?.description.slice(0, 20) : task?.description}...</p>
+                                <p>Task Added By : <span className="font-semibold">{task?.email}</span></p>
                             </div>
                             <div className="flex flex-col justify-between items-center gap-6">
                                 <button onClick={() => handleDelete(task?._id)} className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdOutlineDeleteOutline size={16} /></button>
                                 <Link to={`/dashboard/update/${task?._id}`}><button className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdEdit size={16} /></button></Link>
                                 <Link to={`/dashboard/move/${task?._id}`}>
-                                    <button className="py-1 px-2 rounded flex flex-row gap-2 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs md:text-base"><BiTransferAlt />Move Task To</button>
+                                    <button className="py-1 px-2 rounded flex flex-row gap-1 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs"><BiTransferAlt />Move Task To</button>
                                 </Link>
                             </div>
                         </div>)

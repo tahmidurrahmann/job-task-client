@@ -10,16 +10,24 @@ const TaskDetails = () => {
 
     const email = user?.email;
     const [previousTask, isPrevious] = usePreviousTask();
+    const [onGoing, setOngoing] = useState([])
+    const [completed, setCompleted] = useState([])
     const [added, setAdded] = useState([]);
 
     useEffect(()=>{
         const task = previousTask.filter(item => item?.email === email);
         setAdded(task);
-    },[email, previousTask])
+        const ongoing = added.filter(ongo => ongo.status === "ongoing");
+        setOngoing(ongoing);
+        const completed = added.filter(com => com.status === "completed");
+        setCompleted(completed);
+    },[email, previousTask, added])
 
     if(isPrevious){
         return <Loading />
     }
+
+    
 
     return (
         <div>
@@ -46,7 +54,7 @@ const TaskDetails = () => {
                                     <span className="pt-6 flex justify-center items-center gap-3">Tasks You Are Doing</span>
                                 </dt>
 
-                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl"></dd>
+                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl">{onGoing?.length}</dd>
                             </div>
 
                             <div className="flex flex-col rounded-lg bg-blue-100 px-4 py-8 text-center">
@@ -54,7 +62,7 @@ const TaskDetails = () => {
                                     <span className="pt-6 flex justify-center items-center gap-3">Tasks Completed by You</span>
                                 </dt>
 
-                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl"></dd>
+                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl">{completed?.length}</dd>
                             </div>
                         </dl>
                     </div>
