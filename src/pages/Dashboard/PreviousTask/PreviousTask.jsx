@@ -6,6 +6,7 @@ import { MdEdit } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import { BiTransferAlt } from "react-icons/bi";
 
 const PreviousTask = () => {
 
@@ -49,7 +50,27 @@ const PreviousTask = () => {
                 <div>
                     <h1 className="font-bold text-center">TO DO</h1>
                     {
-                        previousTask?.map(task => <div draggable className="border items-center flex p-3 rounded-lg my-3 justify-between" key={task?._id}>
+                        previousTask?.map(task => task?.status === "todo" && <div className="border items-center flex p-3 rounded-lg my-3 justify-between" key={task?._id}>
+                            <div>
+                                <h1 className="font-semibold">Title: {task?.title}</h1>
+                                <h3 className="font-medium">Deadline: {task?.deadline}</h3>
+                                <p>{task?.priority}</p>
+                                <p>{task?.description.length > 20 ? task?.description.slice(0, 20) : task?.description}...</p>
+                            </div>
+                            <div className="flex flex-col justify-between items-center gap-4">
+                                <button onClick={() => handleDelete(task?._id)} className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdOutlineDeleteOutline size={16} /></button>
+                                <Link to={`/dashboard/update/${task?._id}`}><button className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdEdit size={16} /></button></Link>
+                                <Link to={`/dashboard/move/${task?._id}`}>
+                                    <button className="py-1 px-2 rounded flex flex-row gap-2 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs md:text-base"><BiTransferAlt />Move Task To</button>
+                                </Link>
+                            </div>
+                        </div>)
+                    }
+                </div>
+                <div>
+                    <h1 className="font-bold text-center">ONGOING</h1>
+                    {
+                        previousTask?.map(task => task?.status === "ongoing" && <div className="border items-center flex p-3 rounded-lg my-3 justify-between" key={task?._id}>
                             <div>
                                 <h1 className="font-semibold">Title: {task?.title}</h1>
                                 <h3 className="font-medium">Deadline: {task?.deadline}</h3>
@@ -59,15 +80,32 @@ const PreviousTask = () => {
                             <div className="flex flex-col justify-between items-center gap-6">
                                 <button onClick={() => handleDelete(task?._id)} className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdOutlineDeleteOutline size={16} /></button>
                                 <Link to={`/dashboard/update/${task?._id}`}><button className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdEdit size={16} /></button></Link>
+                                <Link to={`/dashboard/move/${task?._id}`}>
+                                    <button className="py-1 px-2 rounded flex flex-row gap-2 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs md:text-base"><BiTransferAlt />Move Task To</button>
+                                </Link>
                             </div>
                         </div>)
                     }
                 </div>
                 <div>
-                    <h1 className="font-bold text-center">ONGOING</h1>
-                </div>
-                <div>
                     <h1 className="font-bold text-center">COMPLETED</h1>
+                    {
+                        previousTask?.map(task => task?.status === "completed" && <div className="border items-center flex p-3 rounded-lg my-3 justify-between" key={task?._id}>
+                            <div>
+                                <h1 className="font-semibold">Title: {task?.title}</h1>
+                                <h3 className="font-medium">Deadline: {task?.deadline}</h3>
+                                <p>{task?.priority}</p>
+                                <p>{task?.description.length > 20 ? task?.description.slice(0, 20) : task?.description}...</p>
+                            </div>
+                            <div className="flex flex-col justify-between items-center gap-6">
+                                <button onClick={() => handleDelete(task?._id)} className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdOutlineDeleteOutline size={16} /></button>
+                                <Link to={`/dashboard/update/${task?._id}`}><button className="py-1 px-2 rounded bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white"><MdEdit size={16} /></button></Link>
+                                <Link to={`/dashboard/move/${task?._id}`}>
+                                    <button className="py-1 px-2 rounded flex flex-row gap-2 items-center justify-center bg-[#b63327] text-white hover:text-[#b63327] hover:bg-white hover:border hover:border-[#b63327] text-xs md:text-base"><BiTransferAlt />Move Task To</button>
+                                </Link>
+                            </div>
+                        </div>)
+                    }
                 </div>
             </div>
         </div>

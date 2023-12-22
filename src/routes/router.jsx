@@ -9,6 +9,7 @@ import PrivateRoute from "../private/PrivateRoute";
 import Update from "../pages/Dashboard/Update/Update";
 import Contact from "../pages/Contact/Contact";
 import TaskManagement from "../pages/Dashboard/TaskManagement/TaskManagement";
+import Move from "../pages/Move/Move";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path : "taskManagement",
                 element : <TaskManagement></TaskManagement>
+            },
+            {
+                path : "move/:id",
+                element : <Move />
             }
         ]
     }

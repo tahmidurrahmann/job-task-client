@@ -32,7 +32,8 @@ const Modal = () => {
         const deadline = data.deadline;
         const priority = data.priority;
         const email = user?.email;
-        const taskData = { title, description, deadline, priority, email };
+        const status = "todo";
+        const taskData = { title, description, deadline, priority, email, status };
         const res = await axiosSecure.post("/createTask", taskData);
         if (res?.data?.insertedId) {
             Swal.fire({
