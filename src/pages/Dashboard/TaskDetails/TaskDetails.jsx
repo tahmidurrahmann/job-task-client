@@ -36,7 +36,7 @@ const TaskDetails = () => {
                                     <span className="pt-6 flex justify-center items-center gap-3">Your Total Added Tasks</span>
                                 </dt>
 
-                                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
+                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl">
                                     {added?.length}
                                 </dd>
                             </div>
@@ -46,7 +46,7 @@ const TaskDetails = () => {
                                     <span className="pt-6 flex justify-center items-center gap-3">Tasks You Are Doing</span>
                                 </dt>
 
-                                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl"></dd>
+                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl"></dd>
                             </div>
 
                             <div className="flex flex-col rounded-lg bg-blue-100 px-4 py-8 text-center">
@@ -54,7 +54,7 @@ const TaskDetails = () => {
                                     <span className="pt-6 flex justify-center items-center gap-3">Tasks Completed by You</span>
                                 </dt>
 
-                                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl"></dd>
+                                <dd className="text-4xl font-extrabold text-[#b63327] md:text-5xl"></dd>
                             </div>
                         </dl>
                     </div>
