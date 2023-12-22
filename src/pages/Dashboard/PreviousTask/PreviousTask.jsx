@@ -41,7 +41,7 @@ const PreviousTask = () => {
     }
 
     return (
-        <div className="px-12">
+        <div>
             <Helmet>
                 <title>Previous Tasks | SCC Technovision Inc.</title>
             </Helmet>
@@ -49,7 +49,7 @@ const PreviousTask = () => {
                 <div>
                     <h1 className="font-bold text-center">TO DO</h1>
                     {
-                        previousTask?.map(task => <div className="border items-center flex p-3 rounded-lg my-3 justify-between" key={task?._id}>
+                        previousTask?.map(task => <div draggable className="border items-center flex p-3 rounded-lg my-3 justify-between" key={task?._id}>
                             <div>
                                 <h1 className="font-semibold">Title: {task?.title}</h1>
                                 <h3 className="font-medium">Deadline: {task?.deadline}</h3>

@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
@@ -16,7 +15,7 @@ import {
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <div>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <HelmetProvider>
@@ -25,5 +24,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </QueryClientProvider>
     </AuthProvider>
     <Toaster></Toaster>
-  </React.StrictMode>
+  </div>
 )

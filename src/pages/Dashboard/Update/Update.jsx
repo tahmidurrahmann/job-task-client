@@ -41,7 +41,7 @@ const Update = () => {
                 text: "Your task has been updated.",
                 icon: "success"
             });
-            navigate("/dashboard/previousTask");
+            navigate("/dashboard/taskManagement");
         }
     }
 

@@ -1,10 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { IoHomeOutline } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa";
-import { AiOutlineAppstore } from "react-icons/ai";
 import useAuth from "../../../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
-import { MdOutlineDescription } from "react-icons/md";
+import { MdDashboard } from "react-icons/md";
 
 const Dashboard = () => {
 
@@ -33,28 +31,12 @@ const Dashboard = () => {
                         <div>
                             <div className="flex flex-col  space-y-4 pt-4 justify-center items-center">
                                 <NavLink
-                                    to="/dashboard/createTask"
+                                    to="/dashboard/taskManagement"
                                     className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "text-blue-500 bg-white w-full text-xl font-semibold py-3 text-center" : "text-black text-xl font-semibold text-center"
                                     }
                                 >
-                                    <span className="flex justify-center items-center gap-2 md:gap-0.5 lg:gap-2"><FaPlus />Create Task</span>
-                                </NavLink>
-                                <NavLink
-                                    to="/dashboard/taskDetails"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-blue-500 bg-white w-full text-xl font-semibold py-3 text-center" : "text-black text-xl font-semibold text-center"
-                                    }
-                                >
-                                    <span className="flex justify-center items-center gap-2 md:gap-0.5 lg:gap-2"><MdOutlineDescription />Task Details</span>
-                                </NavLink>
-                                <NavLink
-                                    to="/dashboard/previousTask"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-blue-500 bg-white w-full text-xl font-semibold py-3 text-center" : "text-black text-xl font-semibold text-center"
-                                    }
-                                >
-                                    <span className="flex justify-center items-center gap-2 md:gap-0.5 lg:gap-2"><AiOutlineAppstore />All Tasks</span>
+                                    <span className="flex justify-center items-center gap-2 md:gap-0.5 lg:gap-2"><MdDashboard />Task Management</span>
                                 </NavLink>
                             </div>
                         </div>
